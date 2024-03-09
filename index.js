@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import multer from "multer";
 import path from "path";
 import cors from "cors";
-import { productRoute } from ".././server/routes/productRoute.js";
+import { productRoute } from "../server/src/routes/productRoute.js";
 
 env.config();
 const app = express();
@@ -54,9 +54,9 @@ app.post("/upload", upload.single("product"), (req, res) => {
 app.use("/newproduct", productRoute);
 
 app.listen(8000, (error) => {
-  if (!error) {
-    console.log("Server started at 8000");
-  } else {
-    console.log("Error:", error);
+  if (error) {
+    console.error("Error starting server:", error);
+    return;
   }
+  console.log("Server started at 8000");
 });
