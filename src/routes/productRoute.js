@@ -1,4 +1,8 @@
-import Product from "../../server/models/Product.js"
+// import Product from "../../server/models/Product.js"
+// import Product from "../models/Product.js";
+// import Product from "../../src/models/Product.js";
+import Product from "../models/Product.js";
+
 import express from "express";
 
 const routes = express.Router();

@@ -1,4 +1,5 @@
-import UserModel from "../../server/models/User.js";
+import UserModel from "../models/User.js";
+// import UserModel from "../../server/models/User.js";
 import express from "express";
 import jwt from "jsonwebtoken";
 
