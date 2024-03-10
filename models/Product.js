@@ -1,4 +1,4 @@
-// Schema for creatiing schema
+// Schema for creatiing products
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
@@ -12,5 +12,5 @@ const productSchema = new mongoose.Schema({
   available: { type: Boolean, default: true },
 });
 
-const Product = mongoose.model("User", productSchema);
-export default Product;
+const Product = mongoose.model("Product", productSchema);  
+export default Product; 

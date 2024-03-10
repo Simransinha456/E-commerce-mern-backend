@@ -6,6 +6,7 @@ import multer from "multer";
 import path from "path";
 import cors from "cors";
 import { productRoute } from ".././server/routes/productRoute.js";
+import { userRoute } from ".././server/routes/userRoute.js";
 
 env.config();
 const app = express();
@@ -50,8 +51,9 @@ app.post("/upload", upload.single("product"), (req, res) => {
   });
 });
 
-//Routing page of productRoute
+//Routing page of productRoute and userRoute
 app.use("/newproduct", productRoute);
+app.use("/newuser", userRoute);
 
 app.listen(8000, (error) => {
   if (!error) {

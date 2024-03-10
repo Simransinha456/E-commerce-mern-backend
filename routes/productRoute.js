@@ -1,4 +1,4 @@
-import Product from "../models/Product.js";
+import Product from "../../server/models/Product.js"
 import express from "express";
 
 const routes = express.Router();
@@ -25,7 +25,7 @@ routes.post("/addproduct", async (req, res) => {
     new_price: req.body.new_price,
     old_price: req.body.old_price,
   });
-  console.log(product);
+  // console.log(product);
   await product.save(); // whenever we are saving something in our database we used await method because product may takes some time to save
   res.json({
     success: true,
@@ -36,7 +36,7 @@ routes.post("/addproduct", async (req, res) => {
 //API for deleting products--
 routes.post("/removeproduct", async (req, res) => {
   await Product.findOneAndDelete({ id: req.body.id });
-  console.log("Removed");
+  // console.log("Removed");
   res.json({
     success: true,
     name: req.body.name,
@@ -46,7 +46,7 @@ routes.post("/removeproduct", async (req, res) => {
 //API for Getting all products
 routes.get("/allproduct", async (req, res) => {
   let products = await Product.find({});
-  console.log("All products fetched");
+  // console.log("All products fetched");
   res.send(products);
 });
 
