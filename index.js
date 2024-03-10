@@ -5,10 +5,10 @@ import jwt from "jsonwebtoken";
 import multer from "multer";
 import path from "path";
 import cors from "cors";
-import { productRoute } from ".././server/src/routes/productRoute.js";
+import { productRoute } from "./src/routes/productRoute.js";
 // import { productRoute } from "../server/src/routes/productRoute.js";
 // import {userRoute} from "../server/src/routes/userRoute.js"
-import {userRoute} from ".././server/src/routes/userRoute.js"
+import {userRoute} from "./src/routes/userRoute.js"
 
 env.config();
 const app = express();
