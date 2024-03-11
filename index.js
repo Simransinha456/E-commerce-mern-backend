@@ -5,14 +5,13 @@ import jwt from "jsonwebtoken";
 import multer from "multer";
 import path from "path";
 import cors from "cors";
-import { productRoute } from "./src/routes/productRoute.js";
-// import { productRoute } from "../server/src/routes/productRoute.js";
-// import {userRoute} from "../server/src/routes/userRoute.js"
-import {userRoute} from "./src/routes/userRoute.js"
+// import { productRoute } from "./src/routes/productRoute.js";
+import { productRoute } from "../server/src/routes/productRoute.js";
+import {userRoute} from "../server/src/routes/userRoute.js"
 
 env.config();
 const app = express();
-
+ 
 app.use(express.json());
 app.use(cors()); // using this our react app connect with port 8000
 const mongoUrl = process.env.MONGO_URL;
@@ -56,6 +55,8 @@ app.post("/upload", upload.single("product"), (req, res) => {
 //Routing page of productRoute and userRoute
 app.use("/newproduct", productRoute);
 app.use("/newuser", userRoute);
+
+
 
 app.listen(8000, (error) => {
   if (error) {
